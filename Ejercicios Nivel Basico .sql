@@ -83,3 +83,21 @@ FROM STATION
 WHERE city REGEXP '^[^AEIOUaeiou].*[^AEIOUaeiou]$';
 
 -- La expresion .* indica que puede haber cualquier cantidad de caracteres antes de un caracter especial
+
+-- EJERCICIO NUMERO 13: Higher Than 75 Marks
+-- Link ejercicio: https://www.hackerrank.com/challenges/more-than-75-marks/problem?h_r=next-challenge&h_r=next-challenge&h_r=next-challenge&h_v=zen&h_v=zen&h_v=zen&isFullScreen=true
+-- Primera forma con la funcion SUBSTR 
+
+SELECT name
+FROM students 
+WHERE marks > 75
+ORDER BY SUBSTR(name,-3)ASC, ID ASC; -- La sintaxis SUBSTR permite extraer los ultimos 3 caracteres 
+
+-- Segunda forma funcion RIGTH
+
+SELECT name
+FROM students 
+WHERE marks > 75
+ORDER BY RIGHT(name,3)ASC, ID ASC; -- La sintaxis SUBSTR permite extraer los ultimos 3 caracteres 
+
+
