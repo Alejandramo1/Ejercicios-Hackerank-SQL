@@ -1,3 +1,41 @@
+-- EJERCICIO NUMERO 1: Revising the Select Query I
+-- Link ejercicio:https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+-- Solución
+
+SELECT * 
+FROM city 
+WHERE population>100000 
+AND countrycode = 'USA';
+
+-- EJERCICIO NUMERO 2: Revising the Select Query II
+-- Link ejercicio: https://www.hackerrank.com/challenges/revising-the-select-query-2/problem?isFullScreen=true
+-- Solución
+
+SELECT name
+FROM city 
+WHERE population>120000 
+AND countrycode = 'USA';
+
+-- EJERCICIO NUMERO 3: Weather Observation Station 10
+-- Link ejercicio: https://www.hackerrank.com/challenges/weather-observation-station-10/problem?isFullScreen=true&h_r=next-challenge&h_v=zen
+-- Solución 1:
+
+SELECT DISTINCT city
+FROM STATION
+WHERE NOT (city LIKE '%a' 
+            OR city LIKE '%e' 
+            OR city LIKE '%i' 
+            OR city LIKE '%o' 
+            OR city LIKE '%u');
+
+-- Solucion 2:
+
+-- Utilizando expresiones regulares 
+
+SELECT DISTINCT city
+FROM STATION
+WHERE city REGEXP '[^aeiouAEIOU]$';
+
 -- EJERCICIO NUMERO 11: Weather Observation Station 11
 -- Link ejercicio: https://www.hackerrank.com/challenges/weather-observation-station-11/problem?isFullScreen=true
 -- Primera forma de resolverlo en MYSQL
@@ -34,3 +72,14 @@ OR city REGEXP '[^aeiouAEIOU]$';
 
 -- La expresión [^aeiouAEIOU]$ significa cualquier carácter que no sea una vocal en mayúscula o minúscula, seguido del final de la cadena $. 
 -- Esto asegura que el último carácter de la cadena no sea una vocal.
+
+
+-- EJERCICIO NUMERO 12: Weather Observation Station 12
+-- Link ejercicio: https://www.hackerrank.com/challenges/weather-observation-station-12/problem?isFullScreen=true&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+-- Primera forma de resolverlo en MYSQL
+
+SELECT DISTINCT city 
+FROM STATION 
+WHERE city REGEXP '^[^AEIOUaeiou].*[^AEIOUaeiou]$';
+
+-- La expresion .* indica que puede haber cualquier cantidad de caracteres antes de un caracter especial
