@@ -100,4 +100,20 @@ FROM students
 WHERE marks > 75
 ORDER BY RIGHT(name,3)ASC, ID ASC; -- La sintaxis SUBSTR permite extraer los ultimos 3 caracteres 
 
+-- EJERCICIO NUMERO 14: Employee Names
+-- Link ejercicio: https://www.hackerrank.com/challenges/name-of-employees/problem?h_r=next-challenge&h_r=next-challenge&h_r=next-challenge&h_v=zen&h_v=zen&h_v=zen&isFullScreen=true&h_r=next-challenge&h_v=zen
+-- Solucion
+
+SELECT name
+FROM employee
+ORDER BY name ASC;
+
+-- EJERCICIO NUMERO 15: Employee Salaries
+-- Link ejercicio: https://www.hackerrank.com/challenges/salary-of-employees/problem?h_r=next-challenge&h_r=next-challenge&h_r=next-challenge&h_v=zen&h_v=zen&h_v=zen&isFullScreen=true&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+SELECT name
+FROM employee
+WHERE salary >2000 AND months < 10;
+
+
 
